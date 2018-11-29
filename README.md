@@ -6,3 +6,6 @@ This addon is an easy way to add possible translations to TTT2 for the beginning
 1. Rename the example.lua files in gamemodes/terrortown/gamemode/lang and lua/autorun to [your_language].lua
 2. Follow Instructions in each file.
 3. Create Pull-Request
+
+## How else can I help?
+If you find an untranslated String, just write us and we will try to fix it ^^
