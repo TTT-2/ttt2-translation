@@ -228,8 +228,6 @@ L.search_eyes = "Using your detective skills, you identified the last person the
 L.sb_playing = "You are playing on..."
 L.sb_mapchange = "Map changes in {num} rounds or in {time}"
 
-L.sb_sortby = "Sort By:"
-
 L.sb_mia = "Missing In Action"
 L.sb_confirmed = "Confirmed Dead"
 
