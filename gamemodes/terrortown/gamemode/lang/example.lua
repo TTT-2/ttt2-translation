@@ -108,6 +108,8 @@ L.equip_spec_desc = "Description"
 
 L.equip_confirm = "Buy equipment"
 
+L.equip_not_alive = "You can view all available items by selecting a role on the right. Dont forget to mark your favorites!"
+
 -- Disguiser tab in equipment menu
 L.disg_name = "Disguiser"
 L.disg_menutitle = "Disguise control"
@@ -137,6 +139,13 @@ L.xfer_no_recip = "Recipient not valid, credit transfer aborted."
 L.xfer_no_credits = "Insufficient credits for transfer."
 L.xfer_success = "Credit transfer to {player} completed."
 L.xfer_received = "{player} has given you {num} credit."
+
+-- Reroll tab in equipment menu
+L.reroll_name = "Reroll"
+L.reroll_menutitle = "Reroll Items"
+L.reroll_no_credits = "You need no credits to reroll!"
+L.reroll_button = "Reroll"
+L.reroll_help = "Use {amount} credits to get new items in your shop!"
 
 -- Radio tab in equipment menu
 L.radio_name = "Radio"
@@ -227,6 +236,8 @@ L.search_eyes = "Using your detective skills, you identified the last person the
 -- Scoreboard
 L.sb_playing = "You are playing on..."
 L.sb_mapchange = "Map changes in {num} rounds or in {time}"
+
+L.sb_sortby = "Sort By:"
 
 L.sb_mia = "Missing In Action"
 L.sb_confirmed = "Confirmed Dead"
@@ -1087,6 +1098,7 @@ L.equip_tooltip_radar = "Radar control"
 L.equip_tooltip_disguise = "Disguise control"
 L.equip_tooltip_radio = "Radio control"
 L.equip_tooltip_xfer = "Transfer credits"
+L.equip_tooltip_reroll = "Reroll Items"
 
 L.confgrenade_name = "Discombobulator"
 L.polter_name = "Poltergeist"
@@ -1172,3 +1184,9 @@ L.hud_restricted = "Restrict HUDs"
 L.hud_default_failed = "Failed to set the HUD {hudname} as new default. Are you an admin and does this HUD even exist?"
 L.hud_forced_failed = "Failed to force the HUD {hudname}. Are you an admin and does this HUD even exist?"
 L.hud_restricted_failed = "Failed to restrict the HUD {hudname}. Are you an admin?"
+
+L.shop_role_select = "Select a role"
+L.shop_role_selected = "{roles}'s shop was selected!"
+L.shop_search = "Search"
+
+L.button_save = "Save"
