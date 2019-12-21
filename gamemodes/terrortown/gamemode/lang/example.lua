@@ -19,7 +19,7 @@ L.traitors = "TEAM Traitors"
 L.ttt2_desc_none = "Currently you don't have a role!"
 L.ttt2_desc_innocent = "Your goal is to survive the Traitors!"
 L.ttt2_desc_traitor = "Kill every other role with the help of the Traitorshop ([C])!"
-L.ttt2_desc_detective = "You are an Innocent! Help the Innocents to survive or to find the Traitors!"
+L.ttt2_desc_detective = "You are a Detective! Help the Innocents to survive or to find the Traitors!"
 
 -- Round status messages
 L.round_minplayers = "Not enough players to start a new round..."
@@ -40,7 +40,7 @@ L.win_showreport = "Let's look at the round report for {num} seconds."
 
 L.limit_round = "Round limit reached. {mapname} will load soon."
 L.limit_time = "Time limit reached. {mapname} will load soon."
-L.limit_left = "{num} round(s) or {time} minutes remaining before the map changes to {mapname}."
+L.limit_left = "{num} round(s) or {time} minutes remaining before the map changes."
 
 -- Credit awards
 L.credit_all = "Your team have been awarded {num} equipment credit(s) for your performance."
@@ -102,7 +102,7 @@ L.equip_spec_desc = "Description"
 
 L.equip_confirm = "Buy equipment"
 
-L.equip_not_alive = "You can view all available items by selecting a role on the right. Dont forget to mark your favorites!"
+L.equip_not_alive = "You can view all available items by selecting a role on the right. Don't forget to mark your favorites!"
 
 -- Disguiser tab in equipment menu
 L.disg_name = "Disguiser"
@@ -176,6 +176,9 @@ L.quick_suspect = "{player} acts suspicious."
 L.quick_traitor = "{player} is a Traitor!"
 L.quick_inno = "{player} is innocent."
 L.quick_check = "Anyone still alive?"
+
+L.radio_pickup_wrong_team = "You can't pick up the radio from another team."
+L.radio_short_desc = "Weapon sounds are music to me"
 
 -- {player} in the quickchat text normally becomes a player nickname, but can
 -- also be one of the below.  Keep these lowercase.
@@ -268,7 +271,7 @@ L.set_tips = "Show gameplay tips at the bottom of the screen while spectating"
 L.set_startpopup = "Start of round info popup duration"
 L.set_startpopup_tip = "When the round starts, a small popup appears at the bottom of your screen for a few seconds. Change the time it displays for here."
 
-L.set_cross_opacity = "Ironsight crosshair opacity"
+L.set_cross_opacity = "Crosshair opacity"
 L.set_cross_disable = "Disable crosshair completely"
 L.set_minimal_id = "Minimalist Target ID under crosshair (no karma text, hints, etc)"
 L.set_healthlabel = "Show health status label on health bar"
@@ -281,6 +284,7 @@ L.set_fastswmenu_tip = "When fast weapons switch is enabled, the menu switcher m
 L.set_wswitch = "Disable weapon switch menu auto-closing"
 L.set_wswitch_tip = "By default the weapon switcher automatically closes a few seconds after you last scroll. Enable this to make it stay up."
 L.set_cues = "Play sound cue when a round begins or ends"
+L.entity_draw_halo = "Draw an outline around some entities while looking at them"
 
 
 L.set_title_play = "Gameplay settings"
@@ -306,6 +310,7 @@ L.buy_pending = "You already have an order pending, wait until you receive it."
 L.buy_received = "You have received your special equipment."
 
 L.drop_no_room = "You have no room here to drop your weapon!"
+L.pickup_no_room = "You have no space in your inventory for this weapon kind"
 
 L.disg_turned_on = "Disguise enabled!"
 L.disg_turned_off = "Disguise disabled."
@@ -317,10 +322,9 @@ L.item_weapon = "Weapon"
 
 L.item_armor = "Body Armor"
 L.item_armor_desc = [[
-Reduces bullet damage by 30% when
-you get hit.
+Reduces bullet, fire and explosion damage. Depletes over time.
 
-Default equipment for Detectives.]]
+It can be purchased multiple times. After reaching a specific armor value, the armor becomes stronger.]]
 
 L.item_radar = "Radar"
 L.item_radar_desc = [[
@@ -373,6 +377,7 @@ L.vis_name = "Visualizer"
 L.vis_hint = "Press {usekey} to pick up (Detectives only)."
 
 L.vis_help_pri = "{primaryfire} drops the activated device."
+L.vis_short_desc = "Visualizes a crime scene if the victim died by a gunshot wound"
 
 L.vis_desc = [[
 Crime scene visualization device.
@@ -387,12 +392,14 @@ L.decoy_no_room = "You cannot carry this decoy."
 L.decoy_broken = "Your Decoy has been destroyed!"
 
 L.decoy_help_pri = "{primaryfire} plants the Decoy."
+L.decoy_short_desc = "This decoy shows a fake radar sign visible for other teams"
+L.decoy_pickup_wrong_team = "You can't pick it up as it belongs to a different team"
 
 L.decoy_desc = [[
-Shows a fake radar sign to detectives,
-and makes their DNA scanner show the
-location of the Decoy if they scan for
-your DNA.]]
+Shows a fake radar sign to other teams,
+and makes the DNA scanner show the
+location of the Decoy if someone scans
+for your DNA.]]
 
 -- Defuser
 L.defuser_name = "Defuser"
@@ -415,7 +422,12 @@ sound.]]
 
 -- Health station
 L.hstation_name = "Health Station"
-L.hstation_hint = "Press {usekey} to receive health. Charge: {num}."
+L.hstation_subtitle = "Press [key] to receive health."
+L.hstation_charge = "Remaining charge of health station: {charge}"
+L.hstation_empty = "There is no more charge left in this health station"
+L.hstation_maxhealth = "Your health is full"
+L.hstation_short_desc = "The heath station slowly recharges over time"
+
 L.hstation_broken = "Your Health Station has been destroyed!"
 L.hstation_help = "{primaryfire} places the Health Station."
 
@@ -603,15 +615,31 @@ L.karma_min = "Liability"
 
 -- TargetID misc
 L.corpse = "Corpse"
-L.corpse_hint = "Press {usekey} to search. {walkkey} + {usekey} to search covertly."
+L.corpse_hint = "Press [{usekey}] to search. [{walkkey} + {usekey}] to search covertly."
+L.corpse_too_far_away = "The corpse is too far away."
+L.corpse_binoculars = "Press [{key}] to search corpse with binoculars."
+L.corpse_searched_by_detective = "This corpse was searched by a detective"
 
-L.target_disg = " (DISGUISED)"
+L.target_disg = "disguised"
 L.target_unid = "Unidentified body"
 
-L.target_traitor = "TRAITOR"
-L.target_detective = "DETECTIVE"
-
 L.target_credits = "Search to receive unspent credits"
+
+L.target_c4 = "Press [key] to open C4 menu"
+L.target_c4_armed = "Press [key] to disarm C4"
+L.target_c4_armed_defuser = "Press [key] to use defuser"
+L.target_c4_not_disarmable = "You can't disarm C4 of a living teammate"
+L.c4_short_desc = "Something very explosive"
+
+L.target_pickup = "Press [key] to pick up"
+L.target_slot_info = "Slot: {slot}"
+L.target_pickup_weapon = "Press [key] to pickup weapon"
+L.target_switch_weapon = "Press [key] to swap with your current weapon"
+L.target_pickup_weapon_hidden = ", hold {walkkey} for hidden pickup"
+L.target_switch_weapon_hidden = ", hold {walkkey} for hidden switch"
+L.target_switch_weapon_nospace = "There is no inventory slot available for this weapon"
+L.target_switch_drop_weapon_info = "Dropping {name} from slot {slot}"
+L.target_switch_drop_weapon_info_noslot = "There is no droppable weapon in slot {slot}"
 
 -- Traitor buttons (HUD buttons with hand icons that only traitors can see)
 L.tbut_single = "Single use"
@@ -636,7 +664,7 @@ L.punch_bonus = "Your bad score lowered your punch-o-meter limit by {num}"
 L.punch_malus = "Your good score increased your punch-o-meter limit by {num}!"
 
 L.spec_help = "Click to spectate players, or press {usekey} on a physics object to possess it."
-L.spec_help2 = "To leave the spectator mode you have to open the menu by pressing {helpkey}, goto 'gameplay' and toggle the specator mode."
+L.spec_help2 = "To leave the spectator mode, open the menu by pressing {helpkey}, go to 'gameplay' and toggle the spectator mode."
 
 -- Info popups shown when the round starts
 
@@ -1076,6 +1104,7 @@ L.set_avoid_tip = "Enable this to ask the server not to select you as {role} if 
 
 -- v24
 L.drop_no_ammo = "Insufficient ammo in your weapon's clip to drop as an ammo box."
+L.drop_ammo_prevented = "Something prevents you from dropping your ammo."
 
 -- v31
 L.set_cross_brightness = "Crosshair brightness"
@@ -1083,9 +1112,6 @@ L.set_cross_size = "Crosshair size"
 
 -- 5-25-15
 L.hat_retrieve = "You picked up a Detective's hat."
-
--- 3-9-2017
-L.sb_sortby = "Sort By:"
 
 -- 2018-07-24
 L.equip_tooltip_main = "Equipment menu"
@@ -1105,8 +1131,9 @@ L.dna_hud_type = "TYPE"
 L.dna_hud_body = "BODY"
 L.dna_hud_item = "ITEM"
 
-L.binoc_zoom_level = "LEVEL"
+L.binoc_zoom_level = "Zoom Level"
 L.binoc_body = "BODY DETECTED"
+L.binoc_progress = "Search progress: {progress}%"
 
 L.idle_popup_title = "Idle"
 
@@ -1114,12 +1141,12 @@ L.idle_popup_title = "Idle"
 L.set_title_cross = "Crosshair settings"
 
 L.set_cross_color_enable = "Enable custom crosshair color"
-L.set_cross_color = "Custom crosshair color"
+L.set_cross_color = "Custom crosshair color:"
 L.set_cross_gap_enable = "Enable custom crosshair gap"
 L.set_cross_gap = "Custom crosshair gap"
 L.set_cross_static_enable = "Enable static crosshair"
 L.set_ironsight_cross_opacity = "Ironsight crosshair opacity"
-L.set_cross_weaponscale_enable = "Enable weapon crosshair scale"
+L.set_cross_weaponscale_enable = "Enable different crosshair scales for different weapons"
 L.set_cross_thickness = "Crosshair thickness"
 L.set_cross_outlinethickness = "Crosshair outline thickness"
 L.set_cross_dot_enable = "Enable crosshair dot"
@@ -1139,7 +1166,7 @@ L.shop_edit_items = "Edit Items"
 L.shop_edit_shop = "Edit Shop"
 L.shop_create_shop = "Create Custom Shop"
 L.shop_selected = "Selected {role}"
-L.shop_settings_desc = "Change the values to adapt Random Shop ConVars. Don't forget to save afterwards!"
+L.shop_settings_desc = "Change the values to adapt Random Shop ConVars. Don't forget to save your changes!"
 
 L.f1_settings_changes_title = "Changes"
 L.f1_settings_hudswitcher_title = "HUD Switcher"
@@ -1151,7 +1178,7 @@ L.f1_settings_language_title = "Language"
 L.f1_settings_administration_title = "Administration"
 L.f1_settings_shop_title = "Equipment Shop"
 
-L.f1_settings_shop_desc_shopopen = "Should the shop be opened/closed instead of the score menu during preparing / at the end of a round?"
+L.f1_settings_shop_desc_shopopen = "Open the shop by pressing the shop key instead of the score menu during preparing / at the end of a round?"
 L.f1_settings_shop_title_layout = "Item List Layout"
 L.f1_settings_shop_desc_num_columns = "Number of columns"
 L.f1_settings_shop_desc_num_rows = "Number of rows"
@@ -1164,7 +1191,7 @@ L.f1_settings_shop_desc_show_favourite = "Show favourite item marker"
 L.f1_shop_restricted = "Individual changes to the equipment shop layout are not allowed on this server. Please contact a server admin for details."
 
 L.f1_settings_hudswitcher_desc_basecolor = "Base Color"
-L.f1_settings_hudswitcher_desc_hud_scale = "HUD Scale (resets positions)"
+L.f1_settings_hudswitcher_desc_hud_scale = "HUD Scale (resets saved changes)"
 L.f1_settings_hudswitcher_button_close = "Close"
 L.f1_settings_hudswitcher_desc_reset = "Reset HUD's data"
 L.f1_settings_hudswitcher_button_reset = "Reset"
@@ -1173,21 +1200,30 @@ L.f1_settings_hudswitcher_button_layout_editor = "Layout Editor"
 L.f1_settings_hudswitcher_desc_hud_not_supported = "! THIS HUD DOES NOT SUPPORT THE HUD EDITOR !"
 
 L.f1_bind_reset_default = "Default"
-L.f1_bind_disable_bind = "Disable"
-L.f1_bind_description = "Klick and press a button to bind a key."
-L.f1_bind_reset_default_description = "Reset to default value."
-L.f1_bind_disable_description = "Disable this bind."
-
+L.f1_bind_disable_bind = "Clear"
+L.f1_bind_description = "Click and press a button to bind a key."
+L.f1_bind_reset_default_description = "Reset to default key."
+L.f1_bind_disable_description = "Clear this bind's key."
 L.ttt2_bindings_new = "New bound key for {name}: {key}"
+
+L.f1_bind_weaponswitch = "Switch Weapon"
+L.f1_bind_sprint = "Sprint"
+
 L.hud_default = "Default HUD"
-L.hud_force = "Force HUD"
-L.hud_restricted = "Restrict HUDs"
-L.hud_default_failed = "Failed to set the HUD {hudname} as new default. Are you an admin and does this HUD even exist?"
-L.hud_forced_failed = "Failed to force the HUD {hudname}. Are you an admin and does this HUD even exist?"
-L.hud_restricted_failed = "Failed to restrict the HUD {hudname}. Are you an admin?"
+L.hud_force = "Forced HUD"
+L.hud_restricted = "Restricted HUDs"
+L.hud_default_failed = "Failed to set the HUD {hudname} as new default. You don't have permission to do that, or this HUD doesn't exist."
+L.hud_forced_failed = "Failed to force the HUD {hudname}. You don't have permission to do that, or this HUD doesn't exist."
+L.hud_restricted_failed = "Failed to restrict the HUD {hudname}. You don't have permission to do that."
 
 L.shop_role_select = "Select a role"
 L.shop_role_selected = "{roles}'s shop was selected!"
 L.shop_search = "Search"
 
 L.button_save = "Save"
+
+L.disable_spectatorsoutline = "Disable controlled objects' outlines"
+L.disable_spectatorsoutline_tip = "Disables the outlines around objects controlled by spectators (+Performance)"
+
+L.disable_overheadicons = "Disable role icons"
+L.disable_overheadicons_tip = "Disables the role icons over the players' heads (+Performance)"
